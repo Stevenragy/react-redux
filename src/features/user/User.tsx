@@ -1,11 +1,11 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
 import { fetchUsers } from "./userSlice";
+import { useAppDispatch, useAppSelector } from "../../app/hooks";
 
 const User = () => {
-    const user = useSelector((state) => state.user);
-    const dispatch = useDispatch();
+    const user = useAppSelector((state) => state.user);
+    const dispatch = useAppDispatch();
     useEffect(() => {
         dispatch(fetchUsers());
     }, []);

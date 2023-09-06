@@ -1,12 +1,13 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useState } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { ordered, restocked } from "../icecream/iceCreamSlice";
+// import { useSelector, useDispatch } from "react-redux";
+import { ordered, restocked } from "./iceCreamSlice";
+import { useAppDispatch, useAppSelector } from "../../app/hooks";
 
 const IceCreamView = () => {
     const [value, setValue] = useState(1);
-    const numOfIcecreams = useSelector((state) => state.icecream.numOfIcecreams);
-    const dispatch = useDispatch();
+    const numOfIcecreams = useAppSelector((state) => state.icecream.numOfIcecreams);
+    const dispatch = useAppDispatch();
 
     return (
         <div>
